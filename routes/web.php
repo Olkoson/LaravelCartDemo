@@ -14,10 +14,9 @@
 Route::get('/', function () {
     return view('welcome1');
 });
-Route::get('users', function () {
-    return view('users');
-});
-Route::get('user/{id}', 'User\BasicController@show');
-Route::get('/test', function () {
-    return view('test');
-});
+Route::get('/user/{id}', 'User\BasicController@show');
+Route::get('/products', 'ProductsController@showAll')->name('products');
+Route::get('/cart', 'CartController@show')->name('cart');
+Route::post('/cart/add', 'CartController@add');
+Route::post('/cart/remove', 'CartController@remove');
+Route::post('/cart/clear', 'CartController@clear');
