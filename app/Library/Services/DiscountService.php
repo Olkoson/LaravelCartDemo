@@ -46,6 +46,7 @@ class DiscountService implements DiscountServiceInterface
 
     /**
      * @param integer $userId
+     * @param float $price
      *
      * @return float
      */
@@ -88,10 +89,6 @@ class DiscountService implements DiscountServiceInterface
         $discounts['user_loyalty'][1]['user_id'] = 2;
         $discounts['user_loyalty'][1]['discount'] = 0.02;
 
-        if ($type) {
-            return $discounts[$type];
-        } else {
-            return [];
-        }
+        return $discounts[$type] ?? [];
     }
 }

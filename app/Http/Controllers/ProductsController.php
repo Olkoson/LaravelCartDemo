@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Cart;
 use App\Http\Controllers\Controller;
+use Illuminate\View\View;
 
 class ProductsController extends Controller
 {
     /**
      * Show products list
      *
-     * @return Response
+     * @return View
      */
     public function showAll()
     {
