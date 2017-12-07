@@ -1,12 +1,11 @@
 <?php
-
 namespace Tests;
 
 use Illuminate\Contracts\Console\Kernel;
+use Laravel\BrowserKitTesting\TestCase as BaseTestCase;
 
-trait CreatesApplication
+abstract class BrowserKitTestCase extends BaseTestCase
 {
-
     /**
      * The base URL of the application.
      *

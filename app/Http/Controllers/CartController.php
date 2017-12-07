@@ -63,6 +63,7 @@ class CartController extends Controller
     public function add(Request $request)
     {
         $productId = $request->input('product_id');
+        $userId = $request->input('user_id', 1);
 
         $product = Product::find($productId);
 
@@ -72,7 +73,7 @@ class CartController extends Controller
         } else {
             $cart = new Cart();
             $cart->product_id = $productId;
-            $cart->user_id = 1;
+            $cart->user_id = $userId;
             $cart->price = $product->price;
             $cart->save();
         }
